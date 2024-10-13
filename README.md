@@ -136,7 +136,9 @@ public final class JsBridgeBean$a extends Object implements Runnable	// class@00
 ```
 
 阅读代码可以理解其作用是在 WebView 中执行 window.\[callback\](callbackArgString)
+
 callback: name_timestamp_randint，例如 dataDecrypt_1728797281_14，一次性调用，用后即焚
+
 callbackArgString: 经过 base64 编码后的参数
 
 ### 网页端
