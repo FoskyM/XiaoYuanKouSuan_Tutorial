@@ -1,6 +1,12 @@
 # XiaoYuanKouSuan_Tutorial
 小猿口算思路讲解，V2加密接口解密，PK 场达 0.0 秒（开局即提交）原理，过大学生验证原理，不纂改 js 文件和响应包。
+
 ![PixPin_2024-10-12_22-38-01](https://github.com/user-attachments/assets/e0449225-76bb-4fad-a982-25a31d78c460)
+
+## 抖音视频
+[开局即提交且做题时间为0](https://www.douyin.com/video/7425075391896784128)
+
+[等待六秒提交且做题时间为1s](https://www.douyin.com/video/7424683226494537000)
 
 ## 前言
 本笔记只针对小猿口算的 PK 场进行思路讲解，不包含实际代码。
@@ -10,7 +16,7 @@
 ## 使用技术
 LSPosed + WebViewPP + chrome-remote-interface + Frida + adb + mitmproxy
 
-## 思路
+## 基本思路
 使用 LSPosed + WebViewPP 开启远程调试，\
 通过 adb 连接模拟器以便进行远程调试，\
 使用 chrome-remote-interface 对 webview 进行操作，\
@@ -242,7 +248,7 @@ const isUltimateChallenge = () => {
 };
 ```
 
-## 思路
+## 实现思路
 了解了代码后我们就可以理顺思路了。
 1. **如何获取答案**？使用 Frida 来 hook 上 com.yuanfudao.android.common.webview.base.JsBridgeBean，如果回调函数为 dataDecrypt_ 开头，且上一次调用回调参数中 data['wrappedUrl'].includes('math/pk/match/v2')，则将数据 send 到主程序。
 2. **如何进行秒提交**？阅读代码后可以发现在提交对战数据前，会将答题数据存在 LocalStroage 的 exerciseResult 中。那么我们只需要伪造 exerciseResult，再直接打开 result.html，即可实现秒提交，且不用管加密的事情了。什么 Sign 什么 dataEncrypt 的都和我们没关系了。
