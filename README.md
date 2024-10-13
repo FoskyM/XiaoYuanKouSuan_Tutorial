@@ -1,5 +1,6 @@
 # XiaoYuanKouSuan_Tutorial
 小猿口算思路讲解，V2加密接口解密，PK 场达 0.0 秒原理，过大学生验证原理，不纂改 js 文件和响应包。
+![PixPin_2024-10-12_22-38-01](https://github.com/user-attachments/assets/e0449225-76bb-4fad-a982-25a31d78c460)
 
 ## 前言
 本笔记只针对小猿口算的 PK 场进行思路讲解，不包含实际代码。
